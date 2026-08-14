@@ -69,8 +69,20 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Standard Section Spacing */
 .section {
-  padding: 5.5rem 0;
+  padding: 4.5rem 0;
+}
+
+/* TIGHTENED SPACING: All in One & Download CV sections */
+#all-in-one {
+  padding-top: 4rem;
+  padding-bottom: 1.25rem;
+}
+
+#download-cv {
+  padding-top: 1.25rem;
+  padding-bottom: 4rem;
 }
 
 .section-label {
@@ -86,7 +98,7 @@ body {
   font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
 }
 
 /* Crisp Glassmorphism Cards */
@@ -831,10 +843,12 @@ body {
   gap: 2rem;
   background: rgba(11, 15, 29, 0.85);
   border: 1px solid var(--border-glass);
+  margin-bottom: 1.5rem;
 }
 
 .certificate-banner {
   border-color: rgba(138, 79, 255, 0.3);
+  margin-bottom: 0;
 }
 
 .cv-banner-text h2 {
