@@ -1,31 +1,30 @@
 /* ==========================================================
-   COLOR PALETTE & CSS VARIABLES
-   Blends Deep Space Black, Cyan, Purple, Magenta & Emerald
+   MINIMALIST SPACE THEME: OBSIDIAN BLACK, CYAN & PURPLE ACCENTS
    ========================================================== */
 :root {
-  --bg-space: #05050c;
-  --bg-card: rgba(13, 17, 30, 0.72);
-  --bg-card-hover: rgba(22, 28, 48, 0.85);
+  --bg-space: #060813;
+  --bg-card: rgba(11, 15, 29, 0.75);
+  --bg-card-hover: rgba(18, 24, 46, 0.88);
   
   --border-glass: rgba(255, 255, 255, 0.08);
   --border-glass-glow: rgba(0, 240, 255, 0.35);
 
   --accent-cyan: #00f0ff;
   --accent-magenta: #e0218a;
-  --accent-purple: #9d4edd;
+  --accent-purple: #8a4fff;
   --accent-green: #00ff87;
   
-  --text-main: #f1f5f9;
+  --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
 
   --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 
-  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base Styles */
+/* Base Reset & Setup */
 * {
   margin: 0;
   padding: 0;
@@ -46,7 +45,7 @@ body {
   position: relative;
 }
 
-/* Background Space Canvas */
+/* Starfield Background Canvas */
 #space-canvas {
   position: fixed;
   top: 0;
@@ -65,7 +64,7 @@ body {
 
 /* Typography Helpers */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta));
+  background: linear-gradient(135deg, var(--accent-cyan), #9b51e0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -76,7 +75,7 @@ body {
 
 .section-label {
   font-family: var(--font-code);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent-cyan);
   letter-spacing: 2px;
@@ -84,28 +83,28 @@ body {
 }
 
 .section-heading {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 2.5rem;
 }
 
-/* Glassmorphism Generic Card */
+/* Crisp Glassmorphism Cards */
 .glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-glass);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 1.8rem;
   transition: var(--transition);
 }
 
 .glass-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.16);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  border-color: rgba(0, 240, 255, 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* ==========================================================
@@ -115,7 +114,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 5, 12, 0.78);
+  background: rgba(6, 8, 19, 0.85);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-glass);
 }
@@ -141,7 +140,7 @@ body {
 
 .nav-menu {
   display: flex;
-  gap: 1.3rem;
+  gap: 1.25rem;
   list-style: none;
 }
 
@@ -183,8 +182,8 @@ body {
 
 .btn-cv-header:hover {
   background: var(--accent-cyan);
-  color: #000;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  color: #060813;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
 }
 
 .mobile-toggle {
@@ -209,8 +208,8 @@ body {
 
 .hero-avatar-wrapper {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 105px;
+  height: 105px;
   margin-bottom: 1.8rem;
 }
 
@@ -226,25 +225,19 @@ body {
 
 .avatar-glow {
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-magenta), var(--accent-purple));
-  filter: blur(12px);
-  opacity: 0.8;
-  animation: pulseGlow 4s infinite alternate ease-in-out;
-}
-
-@keyframes pulseGlow {
-  0% { opacity: 0.5; transform: scale(0.95); }
-  100% { opacity: 0.9; transform: scale(1.05); }
+  background: var(--accent-cyan);
+  filter: blur(10px);
+  opacity: 0.6;
 }
 
 .hero-terminal-tag code {
   font-family: var(--font-code);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--accent-cyan);
   background: rgba(0, 240, 255, 0.08);
   border: 1px solid rgba(0, 240, 255, 0.2);
@@ -253,7 +246,7 @@ body {
 }
 
 .hero-title {
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
@@ -262,7 +255,7 @@ body {
 
 .hero-subtitle {
   max-width: 680px;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   margin-bottom: 2.5rem;
 }
@@ -277,7 +270,7 @@ body {
 }
 
 .stat-card {
-  background: rgba(13, 17, 30, 0.6);
+  background: rgba(11, 15, 29, 0.6);
   border: 1px solid var(--border-glass);
   padding: 1.2rem 1rem;
   border-radius: 12px;
@@ -302,7 +295,6 @@ body {
   gap: 1rem;
 }
 
-/* Primary & Secondary Buttons */
 .btn-primary,
 .btn-secondary {
   padding: 0.75rem 1.6rem;
@@ -319,7 +311,7 @@ body {
 
 .btn-primary {
   background: var(--accent-cyan);
-  color: #05050c;
+  color: #060813;
 }
 
 .btn-primary:hover {
@@ -401,7 +393,7 @@ body {
 }
 
 .focus-list li i {
-  color: var(--accent-magenta);
+  color: var(--accent-cyan);
   font-size: 0.75rem;
 }
 
@@ -482,8 +474,8 @@ body {
 }
 
 .award-highlight {
-  border-color: rgba(224, 33, 138, 0.4);
-  box-shadow: 0 0 25px rgba(224, 33, 138, 0.12);
+  border-color: rgba(224, 33, 138, 0.35);
+  box-shadow: 0 0 25px rgba(224, 33, 138, 0.08);
 }
 
 .badge-status {
@@ -511,9 +503,9 @@ body {
 }
 
 .badge-review {
-  background: rgba(157, 78, 221, 0.15);
-  color: #c77dff;
-  border: 1px solid rgba(157, 78, 221, 0.4);
+  background: rgba(138, 79, 255, 0.15);
+  color: #b285ff;
+  border: 1px solid rgba(138, 79, 255, 0.4);
 }
 
 .paper-title {
@@ -584,7 +576,7 @@ body {
 }
 
 .feature-tag {
-  color: var(--accent-magenta);
+  color: var(--accent-cyan);
 }
 
 .live-status {
@@ -597,7 +589,7 @@ body {
 }
 
 .in-progress {
-  color: var(--accent-cyan);
+  color: #ffaa00;
 }
 
 .project-title {
@@ -626,41 +618,31 @@ body {
   border-radius: 4px;
 }
 
-.project-actions {
-  display: flex;
-  gap: 0.6rem;
+.btn-full {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
 }
 
-.btn-primary-sm,
-.btn-secondary-sm {
-  padding: 0.45rem 0.9rem;
-  font-size: 0.8rem;
+.btn-primary-sm {
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
   font-weight: 600;
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
+  background: rgba(0, 240, 255, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 240, 255, 0.3);
   transition: var(--transition);
 }
 
-.btn-primary-sm {
-  background: var(--accent-cyan);
-  color: #000;
-}
-
 .btn-primary-sm:hover {
-  background: #38f8ff;
-}
-
-.btn-secondary-sm {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text-main);
-  border: 1px solid var(--border-glass);
-}
-
-.btn-secondary-sm:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--accent-cyan);
+  color: #060813;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
 }
 
 /* ==========================================================
@@ -691,7 +673,7 @@ body {
 .timeline-role {
   font-weight: 600;
   font-size: 0.88rem;
-  color: var(--accent-magenta);
+  color: #b285ff;
 }
 
 .timeline-company {
@@ -774,7 +756,6 @@ body {
 .award-card {
   display: flex;
   gap: 1.2rem;
-  border-color: rgba(224, 33, 138, 0.3);
 }
 
 .award-trophy-icon {
@@ -810,8 +791,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  border: 1px solid rgba(0, 240, 255, 0.3);
-  background: linear-gradient(135deg, rgba(13, 17, 30, 0.85), rgba(224, 33, 138, 0.1));
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  background: linear-gradient(135deg, rgba(11, 15, 29, 0.9), rgba(138, 79, 255, 0.08));
 }
 
 .vault-info {
@@ -841,26 +822,30 @@ body {
 }
 
 /* ==========================================================
-   DOWNLOAD CV SECTION (PRE-CONTACT)
+   DOWNLOAD CV & CERTIFICATES BANNER
    ========================================================== */
 .cv-banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  background: linear-gradient(135deg, rgba(13, 17, 30, 0.9), rgba(157, 78, 221, 0.15));
-  border: 1px solid rgba(157, 78, 221, 0.4);
+  background: rgba(11, 15, 29, 0.85);
+  border: 1px solid var(--border-glass);
+}
+
+.certificate-banner {
+  border-color: rgba(138, 79, 255, 0.3);
 }
 
 .cv-banner-text h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 0.4rem;
 }
 
 .cv-banner-text p {
   color: var(--text-muted);
-  font-size: 0.92rem;
-  max-width: 500px;
+  font-size: 0.9rem;
+  max-width: 480px;
 }
 
 .cv-button-group {
@@ -872,8 +857,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  padding: 0.85rem 1.4rem;
-  background: rgba(255, 255, 255, 0.05);
+  padding: 0.85rem 1.3rem;
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-glass);
   border-radius: 10px;
   text-decoration: none;
@@ -888,7 +873,7 @@ body {
 
 .btn-cv-download strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .btn-cv-download small {
@@ -899,16 +884,16 @@ body {
 .btn-cv-download.active,
 .btn-cv-download:hover {
   background: var(--accent-cyan);
-  color: #000;
+  color: #060813;
   border-color: var(--accent-cyan);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
 .btn-cv-download.active i,
 .btn-cv-download.active small,
 .btn-cv-download:hover i,
 .btn-cv-download:hover small {
-  color: #000;
+  color: #060813;
 }
 
 /* ==========================================================
@@ -982,7 +967,7 @@ body {
 .form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  background: rgba(5, 5, 12, 0.65);
+  background: rgba(6, 8, 19, 0.65);
   border: 1px solid var(--border-glass);
   border-radius: 8px;
   color: var(--text-main);
@@ -1067,7 +1052,7 @@ body {
     top: 4.2rem;
     left: 0;
     width: 100%;
-    background: rgba(5, 5, 12, 0.96);
+    background: rgba(6, 8, 19, 0.97);
     flex-direction: column;
     padding: 1.5rem 2rem;
     gap: 1.2rem;
